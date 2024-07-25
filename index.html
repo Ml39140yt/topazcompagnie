@@ -13,20 +13,25 @@
 </header>
 
 <nav>
-    <a href="#about">À propos</a>
-    <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
+    <a href="#about" class="open-modal" data-modal="about-modal">À propos</a>
+    <a href="#skills" class="open-modal" data-modal="skills-modal">Compétences</a>
+    <a href="#projects" class="open-modal" data-modal="projects-modal">Projets</a>
+    <a href="#contact" class="open-modal" data-modal="contact-modal">Contact</a>
 </nav>
 
-<div class="container">
-    <section id="about" class="window">
+<!-- Modals -->
+<div id="about-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <h2>À propos de nous</h2>
         <img src="profil.jpg" alt="Photo de profil" class="profile-pic">
         <p>Bonjour, nous sommes Topaz Compagnie. Notre domaine d'expertise est [votre domaine]. Nous sommes passionnés par [votre domaine d'intérêt], et nous aimons travailler sur des projets innovants et créatifs.</p>
-    </section>
+    </div>
+</div>
 
-    <section id="skills" class="window">
+<div id="skills-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <h2>Compétences</h2>
         <ul>
             <li>Compétence 1</li>
@@ -34,9 +39,12 @@
             <li>Compétence 3</li>
             <li>Compétence 4</li>
         </ul>
-    </section>
+    </div>
+</div>
 
-    <section id="projects" class="window">
+<div id="projects-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <h2>Nos projets</h2>
         <p>Voici quelques projets sur lesquels nous avons travaillé :</p>
         <ul>
@@ -44,9 +52,12 @@
             <li>Projet 2 : Description du projet 2.</li>
             <li>Projet 3 : Description du projet 3.</li>
         </ul>
-    </section>
+    </div>
+</div>
 
-    <section id="contact" class="window">
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <h2>Contact</h2>
         <p>Vous pouvez nous contacter via :</p>
         <ul>
@@ -54,12 +65,14 @@
             <li>Téléphone : [votre numéro de téléphone]</li>
             <li>LinkedIn : <a href="[votre profil LinkedIn]" target="_blank">Notre LinkedIn</a></li>
         </ul>
-    </section>
+    </div>
 </div>
 
 <footer>
     &copy; 2024 Topaz Compagnie. Tous droits réservés. <a href="https://topazcompagnie.eu" style="color: white;">topazcompagnie.eu</a>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

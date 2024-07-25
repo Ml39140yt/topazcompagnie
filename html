@@ -104,8 +104,8 @@
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm_password').value;
 
@@ -131,7 +131,7 @@
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const username = document.getElementById('login-username').value;
+            const username = document.getElementById('login-username').value.trim();
             const password = document.getElementById('login-password').value;
 
             let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -139,7 +139,7 @@
 
             if (user) {
                 alert('Connexion réussie !');
-                // Redirection ou affichage de la page protégée peut se faire ici
+                // Vous pouvez rediriger l'utilisateur ou afficher une page protégée ici.
             } else {
                 alert('Nom d\'utilisateur ou mot de passe incorrect.');
             }

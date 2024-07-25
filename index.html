@@ -1,4 +1,25 @@
-<!-- Exemple de structure de modale -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page personnelle - Topaz Compagnie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue chez Topaz Compagnie</h1>
+</header>
+
+<nav>
+    <a href="#" class="open-modal" data-modal="about-modal">À propos</a>
+    <a href="#" class="open-modal" data-modal="skills-modal">Compétences</a>
+    <a href="#" class="open-modal" data-modal="projects-modal">Projets</a>
+    <a href="#" class="open-modal" data-modal="contact-modal">Contact</a>
+</nav>
+
+<!-- Modals -->
 <div id="about-modal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -7,3 +28,51 @@
         <p>Bonjour, nous sommes Topaz Compagnie. Notre domaine d'expertise est [votre domaine]. Nous sommes passionnés par [votre domaine d'intérêt], et nous aimons travailler sur des projets innovants et créatifs.</p>
     </div>
 </div>
+
+<div id="skills-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Compétences</h2>
+        <ul>
+            <li>Compétence 1</li>
+            <li>Compétence 2</li>
+            <li>Compétence 3</li>
+            <li>Compétence 4</li>
+        </ul>
+    </div>
+</div>
+
+<div id="projects-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Nos projets</h2>
+        <p>Voici quelques projets sur lesquels nous avons travaillé :</p>
+        <ul>
+            <li>Projet 1 : Description du projet 1.</li>
+            <li>Projet 2 : Description du projet 2.</li>
+            <li>Projet 3 : Description du projet 3.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact</h2>
+        <p>Vous pouvez nous contacter via :</p>
+        <ul>
+            <li>Email : <a href="mailto:contact@topazcompagnie.eu">contact@topazcompagnie.eu</a></li>
+            <li>Téléphone : [votre numéro de téléphone]</li>
+            <li>LinkedIn : <a href="[votre profil LinkedIn]" target="_blank">Notre LinkedIn</a></li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Topaz Compagnie. Tous droits réservés. <a href="https://topazcompagnie.eu" style="color: white;">topazcompagnie.eu</a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

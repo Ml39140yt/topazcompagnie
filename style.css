@@ -1,54 +1,115 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Réinitialisation de certains styles par défaut */
+body, h1, h2, p, ul, li, input, a {
     margin: 0;
     padding: 0;
-    background-color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
+
 header {
     background-color: #3b5998;
-    color: white;
+    color: #fff;
     padding: 20px 0;
     text-align: center;
 }
+
 header h1 {
     margin: 0;
     font-size: 2.5em;
 }
+
 nav {
-    margin: 20px 0;
+    background: #333;
+    color: #fff;
     text-align: center;
+    padding: 10px 0;
 }
+
 nav a {
-    margin: 0 15px;
+    color: #fff;
     text-decoration: none;
-    color: #3b5998;
-    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
 }
+
+nav a:hover {
+    background: #575757;
+}
+
 .container {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+section {
+    margin-bottom: 20px;
+}
+
 .profile-pic {
     display: block;
-    margin: 0 auto;
+    max-width: 150px;
+    margin: 10px auto;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
 }
-section {
-    margin: 20px 0;
+
+form {
+    display: flex;
+    flex-direction: column;
 }
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    background-color: #3b5998;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2d4373;
+}
+
 footer {
+    background-color: #3b5998;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    background-color: #3b5998;
-    color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

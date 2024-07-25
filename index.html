@@ -3,136 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topaz Compagnie - Connexion</title>
+    <title>Topaz Compagnie - Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Page de Connexion -->
-<div id="login-container">
-    <h2>Connexion</h2>
-    <form id="login-form">
-        <label for="login-username">Nom d'utilisateur :</label>
-        <input type="text" id="login-username" name="login-username" required>
-
-        <label for="login-password">Mot de passe :</label>
-        <input type="password" id="login-password" name="login-password" required>
-
-        <input type="submit" value="Se connecter">
-    </form>
-    <p>Pas encore de compte ? <a href="#" id="register-link">S'inscrire</a></p>
-</div>
-
-<!-- Page d'Inscription -->
-<div id="signup-container" style="display: none;">
-    <header>
-        <h1>Bienvenue chez Topaz Compagnie</h1>
-    </header>
-
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
-        <a href="#signup">Créer un compte</a>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>À propos de nous</h2>
-            <img src="profil.jpg" alt="Photo de profil" class="profile-pic">
-            <p>Bonjour, nous sommes Topaz Compagnie. Nous sommes spécialisés dans [votre domaine] et passionnés par [votre domaine d'intérêt]. Nous travaillons sur des projets innovants et créatifs.</p>
-        </section>
-
-        <section id="skills">
-            <h2>Compétences</h2>
-            <ul>
-                <li>Compétence 1</li>
-                <li>Compétence 2</li>
-                <li>Compétence 3</li>
-                <li>Compétence 4</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Nos projets</h2>
-            <ul>
-                <li>Projet 1 : Description du projet 1.</li>
-                <li>Projet 2 : Description du projet 2.</li>
-                <li>Projet 3 : Description du projet 3.</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Vous pouvez nous contacter via :</p>
-            <ul>
-                <li>Email : <a href="mailto:contact@topazcompagnie.eu">contact@topazcompagnie.eu</a></li>
-                <li>Téléphone : [votre numéro de téléphone]</li>
-                <li>LinkedIn : <a href="[votre profil LinkedIn]" target="_blank">Notre LinkedIn</a></li>
-            </ul>
-        </section>
-
-        <section id="signup">
-            <h2>Créer un compte</h2>
-            <form id="signup-form">
-                <label for="username">Nom d'utilisateur :</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="confirm_password">Confirmer le mot de passe :</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-
-                <input type="submit" value="Créer un compte">
-            </form>
-        </section>
+    <!-- Contenu Principal -->
+    <div id="content-container">
+        <h1>Bienvenue sur Topaz Compagnie</h1>
+        <p>Nous sommes ravis de vous accueillir sur notre site.</p>
+        <p>Il n'y a pas de fonctionnalité de connexion ou d'inscription sur cette page.</p>
     </div>
-
-    <footer>
-        &copy; 2024 Topaz Compagnie. Tous droits réservés. <a href="https://topazcompagnie.eu" style="color: white;">topazcompagnie.eu</a>
-    </footer>
-</div>
-
-<script>
-    // Connexion
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const username = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
-        
-        // Vérifiez les informations d'identification
-        if (username === 'admin' && password === 'Vendredi13') {
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('signup-container').style.display = 'block';
-        } else {
-            alert('Nom d\'utilisateur ou mot de passe incorrect.');
-        }
-    });
-
-    // Afficher la page d'inscription
-    document.getElementById('register-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('signup-container').style.display = 'block';
-    });
-
-    // Vérification des mots de passe lors de la soumission du formulaire d'inscription
-    document.getElementById('signup-form').addEventListener('submit', function(e) {
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm_password').value;
-        
-        if (password !== confirmPassword) {
-            alert('Les mots de passe ne correspondent pas.');
-            e.preventDefault();
-        }
-    });
-</script>
-
 </body>
 </html>

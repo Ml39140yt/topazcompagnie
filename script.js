@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const modalId = link.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
-            modal.style.display = 'block';
-            localStorage.setItem('openModal', modalId); // Sauvegarder la modale ouverte
+            if (modal) {
+                modal.style.display = 'block';
+                localStorage.setItem('openModal', modalId); // Sauvegarder la modale ouverte
+            }
         });
     });
 
@@ -15,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButtons = document.querySelectorAll('.close');
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
-            button.closest('.modal').style.display = 'none';
-            localStorage.removeItem('openModal'); // Nettoyer l'état modale
+            const modal = button.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                localStorage.removeItem('openModal'); // Nettoyer l'état modale
+            }
         });
     });
 

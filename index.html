@@ -20,6 +20,7 @@
 
         <input type="submit" value="Se connecter">
     </form>
+    <p>Pas encore de compte ? <a href="#" id="register-link">S'inscrire</a></p>
 </div>
 
 <!-- Page d'Inscription -->
@@ -112,6 +113,13 @@
         } else {
             alert('Nom d\'utilisateur ou mot de passe incorrect.');
         }
+    });
+
+    // Afficher la page d'inscription
+    document.getElementById('register-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('signup-container').style.display = 'block';
     });
 
     // Vérification des mots de passe lors de la soumission du formulaire d'inscription

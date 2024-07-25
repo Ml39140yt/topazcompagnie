@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topaz Compagnie - Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #login-container, #signup-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #3b5998;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2d4373;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #3b5998;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page de Connexion -->
+    <div id="login-container">
+        <h2>Connexion</h2>
+        <form id="login-form">
+            <label for="login-username">Nom d'utilisateur :</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">Mot de passe :</label>
+            <input type="password" id="login-password" required>
+            <input type="submit" value="Se connecter">
+        </form>
+        <p>Pas encore de compte ? <a href="#" id="register-link">S'inscrire</a></p>
+    </div>
+
+    <!-- Page d'Inscription -->
+    <div id="signup-container" style="display: none;">
+        <h2>Créer un compte</h2>
+        <form id="signup-form">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+            <label for="confirm_password">Confirmer le mot de passe :</label>
+            <input type="password" id="confirm_password" required>
+            <input type="submit" value="Créer un compte">
+        </form>
+    </div>
+
+    <script>
+        // Afficher la page d'inscription
+        document.getElementById('register-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('signup-container').style.display = 'block';
+        });
+
+        // Inscription
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                alert('Les mots de passe ne correspondent pas.');
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.find(user => user.username === username)) {
+                alert('Ce nom d\'utilisateur est déjà pris.');
+                return;
+            }
+
+            users.push({ username, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Compte créé avec succès. Vous pouvez maintenant vous connecter.');
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+
+        // Connexion
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                alert('Connexion réussie !');
+                // Redirection ou affichage de la page protégée peut se faire ici
+            } else {
+                alert('Nom d\'utilisateur ou mot de passe incorrect.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,35 @@
-/* Style pour les modales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #3b5998;
+    font-weight: bold;
+}
+
 .modal {
     display: none; /* Masquer les modales par défaut */
     position: fixed; /* Positionner la modale de manière fixe */
@@ -36,4 +67,22 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #3b5998;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

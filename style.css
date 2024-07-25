@@ -155,3 +155,16 @@ footer a:hover {
 #login-container input[type="submit"]:hover {
     background-color: #2d4373;
 }
+
+#login-container p {
+    margin-top: 15px;
+}
+
+#login-container a {
+    color: #3b5998;
+    text-decoration: none;
+}
+
+#login-container a:hover {
+    text-decoration: underline;
+}

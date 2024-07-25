@@ -5,34 +5,46 @@ body {
     background-color: #e0e0e0;
     color: #333;
 }
+
 header {
     background-color: #3b5998;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
+
 header h1 {
     margin: 0;
     font-size: 2.5em;
 }
+
 nav {
     margin: 20px 0;
     text-align: center;
 }
+
 nav a {
     margin: 0 15px;
     text-decoration: none;
     color: #3b5998;
     font-weight: bold;
 }
+
 .container {
     max-width: 900px;
     margin: 20px auto;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.window {
+    margin: 20px 0;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
 .profile-pic {
     display: block;
     margin: 0 auto;
@@ -40,9 +52,7 @@ nav a {
     width: 150px;
     height: 150px;
 }
-section {
-    margin: 20px 0;
-}
+
 footer {
     text-align: center;
     padding: 10px 0;

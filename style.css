@@ -1,27 +1,54 @@
-/* Style pour la page d'accueil */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    padding: 0;
+    background-color: #e0e0e0;
+    color: #333;
 }
-
-#content-container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 20px 0;
     text-align: center;
 }
-
-h1 {
-    margin-bottom: 20px;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
-
-p {
-    margin-top: 15px;
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #3b5998;
+    font-weight: bold;
+}
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+section {
+    margin: 20px 0;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #3b5998;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

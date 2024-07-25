@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalId = link.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
             modal.style.display = 'block';
+            localStorage.setItem('openModal', modalId); // Sauvegarder la modale ouverte
         });
     });
 
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
             button.closest('.modal').style.display = 'none';
+            localStorage.removeItem('openModal'); // Nettoyer l'état modale
         });
     });
 
@@ -22,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
             e.target.style.display = 'none';
+            localStorage.removeItem('openModal'); // Nettoyer l'état modale
         }
     });
+
+    // Ouvrir la modale sauvegardée au chargement de la page
+    const savedModalId = localStorage.getItem('openModal');
+    if (savedModalId) {
+        const modal = document.getElementById(savedModalId);
+        if (modal) {
+            modal.style.display = 'block';
+        }
+    }
 });

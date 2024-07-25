@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topaz Compagnie - Connexion</title>
+    <title>Topaz Compagnie</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,149 +15,30 @@
             background-color: #f4f4f4;
         }
 
-        #login-container, #signup-container {
+        #content-container {
             background: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 300px;
+            text-align: center;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        input[type="text"], input[type="password"] {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            padding: 10px;
-            background-color: #3b5998;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #2d4373;
+        h1 {
+            margin-bottom: 20px;
         }
 
         p {
             margin-top: 15px;
         }
-
-        a {
-            color: #3b5998;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        #signup-error, #login-error {
-            color: red;
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <!-- Page de Connexion -->
-    <div id="login-container">
-        <h2>Connexion</h2>
-        <form id="login-form">
-            <label for="login-username">Nom d'utilisateur :</label>
-            <input type="text" id="login-username" required>
-            <label for="login-password">Mot de passe :</label>
-            <input type="password" id="login-password" required>
-            <input type="submit" value="Se connecter">
-        </form>
-        <p>Pas encore de compte ? <a href="#" id="register-link">S'inscrire</a></p>
-        <p id="login-error"></p>
+    <!-- Contenu Principal -->
+    <div id="content-container">
+        <h1>Bienvenue sur Topaz Compagnie</h1>
+        <p>Cette page est conçue pour vous accueillir.</p>
+        <p>Il n'y a pas de fonctionnalité de connexion ou d'inscription sur cette page.</p>
     </div>
-
-    <!-- Page d'Inscription -->
-    <div id="signup-container" style="display: none;">
-        <h2>Créer un compte</h2>
-        <form id="signup-form">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" required>
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" required>
-            <label for="confirm_password">Confirmer le mot de passe :</label>
-            <input type="password" id="confirm_password" required>
-            <input type="submit" value="Créer un compte">
-        </form>
-        <p id="signup-error"></p>
-    </div>
-
-    <script>
-        // Afficher la page d'inscription
-        document.getElementById('register-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('signup-container').style.display = 'block';
-        });
-
-        // Inscription
-        document.getElementById('signup-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm_password').value;
-
-            const signupError = document.getElementById('signup-error');
-            signupError.style.display = 'none';
-
-            if (password !== confirmPassword) {
-                signupError.textContent = 'Les mots de passe ne correspondent pas.';
-                signupError.style.display = 'block';
-                return;
-            }
-
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.find(user => user.username === username)) {
-                signupError.textContent = 'Ce nom d\'utilisateur est déjà pris.';
-                signupError.style.display = 'block';
-                return;
-            }
-
-            users.push({ username, password });
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Compte créé avec succès. Vous pouvez maintenant vous connecter.');
-            document.getElementById('signup-container').style.display = 'none';
-            document.getElementById('login-container').style.display = 'block';
-        });
-
-        // Connexion
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const username = document.getElementById('login-username').value.trim();
-            const password = document.getElementById('login-password').value;
-
-            const loginError = document.getElementById('login-error');
-            loginError.style.display = 'none';
-
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            const user = users.find(user => user.username === username && user.password === password);
-
-            if (user) {
-                alert('Connexion réussie !');
-                // Redirection ou affichage de la page protégée
-            } else {
-                loginError.textContent = 'Nom d\'utilisateur ou mot de passe incorrect.';
-                loginError.style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>
